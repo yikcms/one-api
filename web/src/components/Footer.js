@@ -28,7 +28,10 @@ const Footer = () => {
   }, []);
 
   return (
-
+    <Segment vertical>
+      <Container textAlign='center'>
+      </Container>
+    </Segment>
   );
 };
 
