@@ -4,6 +4,7 @@ WORKDIR /build
 COPY web/package.json .
 RUN npm install
 COPY ./web .
+RUN sed -i 's/源码：\(.*?\)<\/a>//g' /build/web/src/pages/Home/index.js
 COPY ./VERSION .
 RUN DISABLE_ESLINT_PLUGIN='true' REACT_APP_VERSION=$(cat VERSION) npm run build
 
